@@ -1,0 +1,29 @@
+
+> portfolio@0.0.0 build
+> vite build
+
+vite v5.4.21 building for production...
+transforming...
+✓ 2142 modules transformed.
+x Build failed in 3.08s
+error during build:
+src/sections/Experience.jsx (9:2): "Github" is not exported by "node_modules/lucide-react/dist/esm/lucide-react.js", imported by "src/sections/Experience.jsx".
+file: /Users/ismailyousif/Documents/myportfolio/Ismail/src/sections/Experience.jsx:9:2
+
+ 7:   Settings, 
+ 8:   Users, 
+ 9:   Github, 
+      ^
+10:   TrendingUp, 
+11:   LineChart, 
+
+    at getRollupError (file:///Users/ismailyousif/Documents/myportfolio/Ismail/node_modules/rollup/dist/es/shared/parseAst.js:406:41)
+    at error (file:///Users/ismailyousif/Documents/myportfolio/Ismail/node_modules/rollup/dist/es/shared/parseAst.js:402:42)
+    at Module.error (file:///Users/ismailyousif/Documents/myportfolio/Ismail/node_modules/rollup/dist/es/shared/node-entry.js:17380:16)
+    at Module.traceVariable (file:///Users/ismailyousif/Documents/myportfolio/Ismail/node_modules/rollup/dist/es/shared/node-entry.js:17813:29)
+    at ModuleScope.findVariable (file:///Users/ismailyousif/Documents/myportfolio/Ismail/node_modules/rollup/dist/es/shared/node-entry.js:15403:39)
+    at ReturnValueScope.findVariable (file:///Users/ismailyousif/Documents/myportfolio/Ismail/node_modules/rollup/dist/es/shared/node-entry.js:5676:38)
+    at FunctionBodyScope.findVariable (file:///Users/ismailyousif/Documents/myportfolio/Ismail/node_modules/rollup/dist/es/shared/node-entry.js:5676:38)
+    at ReturnValueScope.findVariable (file:///Users/ismailyousif/Documents/myportfolio/Ismail/node_modules/rollup/dist/es/shared/node-entry.js:5676:38)
+    at FunctionBodyScope.findVariable (file:///Users/ismailyousif/Documents/myportfolio/Ismail/node_modules/rollup/dist/es/shared/node-entry.js:5676:38)
+    at Identifier.bind (file:///Users/ismailyousif/Documents/myportfolio/Ismail/node_modules/rollup/dist/es/shared/node-entry.js:5450:40)
