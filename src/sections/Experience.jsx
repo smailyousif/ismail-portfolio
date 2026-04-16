@@ -21,6 +21,7 @@ const workExp = [
     id: 1,
     role: "Data Analyst Intern",
     org: "Doctor Anywhere",
+    link: "https://doctoranywhere.com/",
     duration: "Apr 2025 – Oct 2025",
     desc: "",
     bullets: [
@@ -34,6 +35,7 @@ const workExp = [
     id: 2,
     role: "Data Analyst Intern",
     org: "Placement Dost",
+    link: "https://www.linkedin.com/company/placement-dost?originalSubdomain=in",
     duration: "May 2024 – Jun 2024",
     desc: "",
     bullets: [
@@ -118,6 +120,7 @@ const projects = [
   {
     id: 1,
     title: "FinTech Analytics & Risk Dashboard",
+    link: "https://github.com/smailyousif/fintech-analytics-dashboard",
     duration: "09/2025 - 10/2025",
     desc: "Comprehensive dashboard for assessing financial risk and monitoring performance metrics.",
     metrics: ["40K+ records processed", "Improved accuracy by 25%", "Reduced NPLs by 10%"],
@@ -126,6 +129,7 @@ const projects = [
   {
     id: 2,
     title: "Student Academic Performance Prediction",
+    link: "https://github.com/smailyousif/SAPPS",
     duration: "06/2024 – 02/2025",
     desc: "An end-to-end machine learning pipeline determining academic risks.",
     metrics: ["Reduced process time from 2 days → 5 minutes", "ML-based risk classification"],
@@ -134,6 +138,7 @@ const projects = [
   {
     id: 3,
     title: "African Credit Scoring Challenge",
+    link: "https://github.com/smailyousif/African-Credit-Scoring-Challenge",
     duration: "11/2024 – 01/2025",
     desc: "Developed a predictive model built exclusively for nuanced credit scoring.",
     metrics: ["Top 16% global ranking", "F1 score: 0.7006"],
@@ -142,6 +147,7 @@ const projects = [
   {
     id: 4,
     title: "House Price Prediction System",
+    link: "https://github.com/smailyousif/house-price-prediction",
     duration: "06/2024 – 07/2024",
     desc: "End-to-end Machine learning application serving streamlined real-time predictions.",
     metrics: ["Real-time prediction Engine", "Robust web interaction"],
@@ -243,7 +249,13 @@ const Experience = () => {
                         <h3 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-2">{exp.role}</h3>
 
                         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-5">
-                          <h4 className="text-lg font-bold text-blue-600">{exp.org}</h4>
+                          <h4 className="text-lg font-bold text-blue-600">
+                            {exp.link ? (
+                              <a href={exp.link} target="_blank" rel="noopener noreferrer" className="hover:underline">{exp.org}</a>
+                            ) : (
+                              exp.org
+                            )}
+                          </h4>
                           <div className="flex items-center text-sm font-semibold text-gray-500 bg-gray-50 px-3 py-1.5 rounded-full w-fit">
                             <Calendar size={14} className="mr-2" />
                             {exp.duration}
@@ -325,7 +337,7 @@ const Experience = () => {
                       <div className="bg-gray-50 px-3 py-1 rounded-full text-xs font-bold text-gray-500 mb-4 inline-block tracking-wider uppercase">
                         {project.duration}
                       </div>
-                      <a href="#" className="p-2 bg-gray-50 rounded-full hover:bg-black hover:text-white transition-colors text-gray-400">
+                      <a href={project.link || "#"} target={project.link ? "_blank" : undefined} rel={project.link ? "noopener noreferrer" : undefined} className="p-2 bg-gray-50 rounded-full hover:bg-black hover:text-white transition-colors text-gray-400">
                         <ExternalLink size={18} />
                       </a>
                     </div>
