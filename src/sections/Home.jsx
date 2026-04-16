@@ -84,7 +84,7 @@ const Home = () => {
           </motion.h2>
 
           <motion.h1 variants={itemVariants} className="text-5xl sm:text-7xl md:text-[5.5rem] font-black text-black tracking-tighter mb-8 leading-[1.05] sm:leading-[1.05]">
-            Ismail Yousif <br className="hidden sm:block" /> Mohamed Ramadan
+            Ismail Yousif
           </motion.h1>
 
           <motion.div variants={itemVariants} className="w-24 h-1.5 bg-black rounded-full mb-10"></motion.div>

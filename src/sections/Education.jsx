@@ -54,7 +54,7 @@ const Education = () => {
             whileInView={{ height: '100%' }}
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 1.5, ease: "easeInOut" }}
-            className="absolute left-0 top-2 bottom-0 w-1 bg-gradient-to-b from-blue-500 via-purple-500 to-transparent rounded-full"
+            className="absolute left-0 top-2 bottom-0 w-1 bg-gradient-to-b from-blue-500 to-blue-200 rounded-full"
           ></motion.div>
 
           {/* Timeline Dot */}
@@ -77,9 +77,9 @@ const Education = () => {
 
             {/* Primary Info (Block 1) */}
             <motion.div variants={itemVariants}>
-              <h3 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-4 leading-tight tracking-tighter">
-                Bachelor of Computer Science
-                <span className="block text-xl sm:text-2xl text-blue-600 font-bold mt-2 sm:mt-3">
+              <h3 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-4 leading-tight tracking-tighter flex flex-col gap-4">
+                <span>Bachelor of Computer Science</span>
+                <span className="text-xl sm:text-2xl text-blue-600 font-bold block tracking-normal">
                   (Data Science Specialization)
                 </span>
               </h3>
@@ -118,20 +118,7 @@ const Education = () => {
               </div>
             </motion.div>
 
-            {/* Core Values / Badges (Block 4) */}
-            <motion.div variants={itemVariants}>
-              <h4 className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-5">University Core Values</h4>
-              <div className="flex flex-wrap gap-3">
-                {coreValues.map((value, idx) => (
-                  <div
-                    key={idx}
-                    className="px-5 py-2.5 rounded-full bg-white border border-gray-200 shadow-sm text-sm font-bold text-gray-600 hover:border-purple-300 hover:text-purple-700 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
-                  >
-                    {value}
-                  </div>
-                ))}
-              </div>
-            </motion.div>
+
 
           </motion.div>
         </div>

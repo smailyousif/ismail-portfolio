@@ -21,46 +21,97 @@ const workExp = [
     id: 1,
     role: "Data Analyst Intern",
     org: "Doctor Anywhere",
-    duration: "04/2025 – 10/2025",
-    desc: "Embedded within cross-functional teams to drive operational efficiency and informed decision-making.",
-    bullets: ["Built dashboards and tracked critical KPIs", "Helped teams make data-driven decisions"]
+    duration: "Apr 2025 – Oct 2025",
+    desc: "",
+    bullets: [
+      "Built and maintained production KPI dashboards in Tableau processing 100K+ healthcare records, providing real-time operational visibility for business and medical stakeholders across Southeast Asia.",
+      "Engineered SQL and dbt data models in Google BigQuery to transform and integrate healthcare datasets, and resolved a critical revenue discrepancy by debugging the full data pipeline — restoring 100% financial reporting accuracy for the Finance team.",
+      "Automated reporting workflows using SQL and dbt, reducing manual reporting effort by 30% across the Data Intelligence team.",
+      "Followed a full Git/Bitbucket pull request workflow in a production environment, coordinating cross-team Data Engineering tickets via Jira and documenting processes in Confluence."
+    ]
   },
   {
     id: 2,
-    role: "Data Analyst (Placement)",
-    org: "Dost",
-    duration: "06/2024 – 07/2024",
-    desc: "Contributed to business intelligence efforts through hands-on data manipulation and insights generation.",
-    bullets: ["Worked on dynamic analytics tasks and reporting", "Supported strategic decision-making processes"]
-  },
-  {
-    id: 3,
-    role: "Teaching Assistant",
-    org: "UNESCO Institute (Al Geneina)",
-    duration: "01/2019 – 01/2020",
-    desc: "Assisted in academic operations and direct student instruction.",
-    bullets: ["Effectively taught 3 classes", "Marked exams and handled essential academic/admin tasks"]
-  },
-  {
-    id: 4,
-    role: "English Teacher",
-    org: "Al Mustagbal Primary School (Khartoum)",
-    duration: "06/2020 – 07/2021",
-    desc: "Delivered comprehensive English language instruction to primary level students.",
+    role: "Data Analyst Intern",
+    org: "Placement Dost",
+    duration: "May 2024 – Jun 2024",
+    desc: "",
     bullets: [
-      "Taught English grammar and literature",
-      "Covered subjects including 'A Tale of Two Cities', 'Black Tulip', and SPINE curriculum"
+      "Conducted deep-dive SQL analysis on a large-scale Alibaba e-commerce dataset, performing data cleaning, transformation, and normalisation across complex relational tables.",
+      "Built reusable SQL scripts using window functions, aggregations, rankings, and stored procedures to surface actionable business insights for stakeholders.",
+      "Improved data processing efficiency by 30% through query optimisation and streamlining the monthly reporting cycle for the analytics team."
     ]
   }
 ];
 
 const leadershipExp = [
-  { id: 1, role: "Co-Founder & Media Coordinator", org: "Spark Hope Organization", duration: "2024 – Present", icon: HeartHandshake, bullets: ["Managed branding, media, and campaigns", "Led content strategy and engagement analytics"] },
-  { id: 2, role: "Secretary", org: "AIU Football Club", duration: "2023 – 2024", icon: Users, bullets: ["Organized tournaments and training schedules", "Managed communication with university"] },
-  { id: 3, role: "Secretary", org: "School of Computing & Informatics Committee", duration: "2024 – 2025", icon: Settings, bullets: ["Represented students and solved academic issues"] },
-  { id: 4, role: "Committee Member", org: "Kedah Maker Fair", duration: "2025", icon: MonitorPlay, bullets: ["Organized tech exhibition for students"] },
-  { id: 5, role: "Block Leader", org: "AIU Residential Council", duration: "2022 – 2023", icon: Users, bullets: ["Managed student welfare and housing environment"] },
-  { id: 6, role: "Secretary", org: "Sudanese Student Community", duration: "2022 – 2023", icon: Users, bullets: ["Supported students, visas, and events"] },
+  { 
+    id: 1, 
+    role: "Co-Founder & Media Coordinator", 
+    org: "SparkHope Organisation", 
+    duration: "2024 – Present", 
+    icon: HeartHandshake, 
+    bullets: [
+      "Co-founded SparkHope, a humanitarian organisation recognised by the AIU Alumni Centre, dedicated to empowering underprivileged Sudanese youth through education, vocational training, and community support.",
+      "Led strategic planning, branding, and digital communications — managing social media campaigns that supported over 100 families in Sudan across two consecutive Ramadan relief drives.",
+      "Operates hybrid social business initiatives that reinvest revenue into scholarships and community learning programmes, reducing reliance on external donations."
+    ]
+  },
+  { 
+    id: 2, 
+    role: "Secretary", 
+    org: "AIU Football Club", 
+    duration: "2023 – 2024", 
+    icon: Users, 
+    bullets: [
+      "Managed official documentation, registrations, and logistics for inter-university football competitions, representing Albukhary International University in official tournaments.",
+      "Served as the primary liaison between the club and university administration, coordinating training schedules and facility bookings to ensure smooth operations."
+    ]
+  },
+  { 
+    id: 3, 
+    role: "Secretary", 
+    org: "School of Computing & Informatics Committee", 
+    duration: "2024 – 2025", 
+    icon: Settings, 
+    bullets: [
+      "Acted as a key mediator between students and the School of Computing & Informatics, addressing academic difficulties and resource challenges to improve the student learning experience.",
+      "Facilitated communication between the student body and faculty leadership, helping streamline the resolution of grievances and advocating for better resource allocation."
+    ]
+  },
+  { 
+    id: 4, 
+    role: "Committee Member", 
+    org: "Kedah Maker Fair", 
+    duration: "2024", 
+    icon: MonitorPlay, 
+    bullets: [
+      "Helped organise a regional IT exhibition showcasing technical projects from students under 16, supporting the execution of a state-level competition across logistics and coordination.",
+      "Promoted creative student innovations such as Smart Door Systems, fostering a platform for young local talent to showcase their work in technology."
+    ]
+  },
+  { 
+    id: 5, 
+    role: "Block Leader", 
+    org: "AIU Residential Council", 
+    duration: "2022 – 2023", 
+    icon: Users, 
+    bullets: [
+      "Oversaw student welfare and maintained a positive living environment within the residential complex, serving as the primary contact for residents on facility and welfare concerns.",
+      "Organised community-building activities to foster social cohesion and improve quality of life for students on campus."
+    ]
+  },
+  { 
+    id: 6, 
+    role: "Secretary", 
+    org: "Sudanese Student Community", 
+    duration: "2022 – 2023", 
+    icon: Users, 
+    bullets: [
+      "Acted as a vital liaison between Sudanese students and AIU Student Affairs, coordinating administrative matters including visa support and resolution of academic challenges.",
+      "Spearheaded community outreach and cultural programmes to ensure strong representation and a supportive environment for Sudanese students within the university."
+    ]
+  }
 ];
 
 const projects = [
@@ -103,8 +154,8 @@ const Experience = () => {
 
   const tabs = [
     { name: 'Work Experience', icon: Briefcase },
-    { name: 'Leadership', icon: Award },
-    { name: 'Projects', icon: FolderOpen }
+    { name: 'Projects', icon: FolderOpen },
+    { name: 'Leadership', icon: Award }
   ];
 
   // Animation variants
@@ -172,37 +223,47 @@ const Experience = () => {
                 initial="hidden"
                 animate="visible"
                 exit={{ opacity: 0, y: -20, transition: { duration: 0.2 } }}
-                className="max-w-4xl mx-auto relative pl-8 border-l-2 border-gray-100 space-y-12"
+                className="max-w-5xl mx-auto relative px-4"
               >
-                {workExp.map((exp, idx) => (
-                  <motion.div key={exp.id} variants={itemVariants} className="relative group">
-                    {/* Timeline Node */}
-                    <div className="absolute -left-[41px] top-4 w-5 h-5 rounded-full bg-white border-4 border-blue-500 group-hover:scale-125 transition-transform duration-300"></div>
+                {/* Center Line Desktop */}
+                <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 to-purple-500 rounded-full hidden md:block opacity-30"></div>
+                
+                <div className="space-y-12 relative">
+                  {workExp.map((exp, idx) => (
+                    <motion.div key={exp.id} variants={itemVariants} className={`relative flex flex-col md:flex-row justify-between items-center w-full ${idx % 2 === 0 ? 'md:flex-row-reverse' : ''} group`}>
+                      
+                      {/* Timeline Node Desktop */}
+                      <div className="absolute left-1/2 transform -translate-x-1/2 w-5 h-5 rounded-full bg-white border-4 border-blue-500 group-hover:scale-125 transition-transform duration-300 hidden md:block z-10"></div>
+                      
+                      {/* Empty side for Desktop alternating layout */}
+                      <div className="hidden md:block w-5/12"></div>
+                      
+                      {/* Content Container */}
+                      <div className="w-full md:w-5/12 bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-gray-100 group-hover:shadow-lg group-hover:-translate-y-1 group-hover:border-blue-100 transition-all duration-300 relative z-10">
+                        <h3 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-2">{exp.role}</h3>
 
-                    <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-gray-100 group-hover:shadow-lg group-hover:-translate-y-1 group-hover:border-blue-100 transition-all duration-300">
-                      <h3 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-2">{exp.role}</h3>
-
-                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-5">
-                        <h4 className="text-lg font-bold text-blue-600">{exp.org}</h4>
-                        <div className="flex items-center text-sm font-semibold text-gray-500 bg-gray-50 px-3 py-1.5 rounded-full w-fit">
-                          <Calendar size={14} className="mr-2" />
-                          {exp.duration}
+                        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-5">
+                          <h4 className="text-lg font-bold text-blue-600">{exp.org}</h4>
+                          <div className="flex items-center text-sm font-semibold text-gray-500 bg-gray-50 px-3 py-1.5 rounded-full w-fit">
+                            <Calendar size={14} className="mr-2" />
+                            {exp.duration}
+                          </div>
                         </div>
+
+                        {exp.desc && <p className="text-gray-600 mb-5 leading-relaxed">{exp.desc}</p>}
+
+                        <ul className="space-y-3">
+                          {exp.bullets.map((bullet, i) => (
+                            <li key={i} className="flex items-start text-gray-700">
+                              <span className="h-1.5 w-1.5 rounded-full bg-purple-500 mt-2.5 mr-3 shrink-0"></span>
+                              <span>{bullet}</span>
+                            </li>
+                          ))}
+                        </ul>
                       </div>
-
-                      <p className="text-gray-600 mb-5 leading-relaxed">{exp.desc}</p>
-
-                      <ul className="space-y-3">
-                        {exp.bullets.map((bullet, i) => (
-                          <li key={i} className="flex items-start text-gray-700">
-                            <span className="h-1.5 w-1.5 rounded-full bg-purple-500 mt-2.5 mr-3 shrink-0"></span>
-                            <span>{bullet}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </motion.div>
-                ))}
+                    </motion.div>
+                  ))}
+                </div>
               </motion.div>
             )}
 
