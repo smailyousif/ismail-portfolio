@@ -47,68 +47,68 @@ const workExp = [
 ];
 
 const leadershipExp = [
-  { 
-    id: 1, 
-    role: "Co-Founder & Media Coordinator", 
-    org: "SparkHope Organisation", 
-    duration: "2024 – Present", 
-    icon: HeartHandshake, 
+  {
+    id: 1,
+    role: "Co-Founder & Media Coordinator",
+    org: "SparkHope Organisation",
+    duration: "2024 – Present",
+    icon: HeartHandshake,
     bullets: [
       "Co-founded SparkHope, a humanitarian organisation recognised by the AIU Alumni Centre, dedicated to empowering underprivileged Sudanese youth through education, vocational training, and community support.",
       "Led strategic planning, branding, and digital communications — managing social media campaigns that supported over 100 families in Sudan across two consecutive Ramadan relief drives.",
       "Operates hybrid social business initiatives that reinvest revenue into scholarships and community learning programmes, reducing reliance on external donations."
     ]
   },
-  { 
-    id: 2, 
-    role: "Secretary", 
-    org: "AIU Football Club", 
-    duration: "2023 – 2024", 
-    icon: Users, 
+  {
+    id: 2,
+    role: "Secretary",
+    org: "AIU Football Club",
+    duration: "2023 – 2024",
+    icon: Users,
     bullets: [
       "Managed official documentation, registrations, and logistics for inter-university football competitions, representing Albukhary International University in official tournaments.",
       "Served as the primary liaison between the club and university administration, coordinating training schedules and facility bookings to ensure smooth operations."
     ]
   },
-  { 
-    id: 3, 
-    role: "Secretary", 
-    org: "School of Computing & Informatics Committee", 
-    duration: "2024 – 2025", 
-    icon: Settings, 
+  {
+    id: 3,
+    role: "Secretary",
+    org: "School of Computing & Informatics Committee",
+    duration: "2024 – 2025",
+    icon: Settings,
     bullets: [
       "Acted as a key mediator between students and the School of Computing & Informatics, addressing academic difficulties and resource challenges to improve the student learning experience.",
       "Facilitated communication between the student body and faculty leadership, helping streamline the resolution of grievances and advocating for better resource allocation."
     ]
   },
-  { 
-    id: 4, 
-    role: "Committee Member", 
-    org: "Kedah Maker Fair", 
-    duration: "2024", 
-    icon: MonitorPlay, 
+  {
+    id: 4,
+    role: "Committee Member",
+    org: "Kedah Maker Fair",
+    duration: "2024",
+    icon: MonitorPlay,
     bullets: [
       "Helped organise a regional IT exhibition showcasing technical projects from students under 16, supporting the execution of a state-level competition across logistics and coordination.",
       "Promoted creative student innovations such as Smart Door Systems, fostering a platform for young local talent to showcase their work in technology."
     ]
   },
-  { 
-    id: 5, 
-    role: "Block Leader", 
-    org: "AIU Residential Council", 
-    duration: "2022 – 2023", 
-    icon: Users, 
+  {
+    id: 5,
+    role: "Block Leader",
+    org: "AIU Residential Council",
+    duration: "2022 – 2023",
+    icon: Users,
     bullets: [
       "Oversaw student welfare and maintained a positive living environment within the residential complex, serving as the primary contact for residents on facility and welfare concerns.",
       "Organised community-building activities to foster social cohesion and improve quality of life for students on campus."
     ]
   },
-  { 
-    id: 6, 
-    role: "Secretary", 
-    org: "Sudanese Student Community", 
-    duration: "2022 – 2023", 
-    icon: Users, 
+  {
+    id: 6,
+    role: "Secretary",
+    org: "Sudanese Student Community",
+    duration: "2022 – 2023",
+    icon: Users,
     bullets: [
       "Acted as a vital liaison between Sudanese students and AIU Student Affairs, coordinating administrative matters including visa support and resolution of academic challenges.",
       "Spearheaded community outreach and cultural programmes to ensure strong representation and a supportive environment for Sudanese students within the university."
@@ -191,7 +191,7 @@ const Experience = () => {
           <p className="text-lg text-gray-500 mb-8 max-w-2xl mx-auto">
             My professional journey, leadership, and impactful projects
           </p>
-          <div className="h-1.5 w-24 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
+          <div className="h-1.5 w-24 bg-[#2563eb] mx-auto rounded-full"></div>
         </motion.div>
 
         {/* Tab Navigation */}
@@ -232,18 +232,18 @@ const Experience = () => {
                 className="max-w-5xl mx-auto relative px-4"
               >
                 {/* Center Line Desktop */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 to-purple-500 rounded-full hidden md:block opacity-30"></div>
-                
+                <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-1 bg-[#2563eb] rounded-full hidden md:block opacity-30"></div>
+
                 <div className="space-y-12 relative">
                   {workExp.map((exp, idx) => (
                     <motion.div key={exp.id} variants={itemVariants} className={`relative flex flex-col md:flex-row justify-between items-center w-full ${idx % 2 === 0 ? 'md:flex-row-reverse' : ''} group`}>
-                      
+
                       {/* Timeline Node Desktop */}
                       <div className="absolute left-1/2 transform -translate-x-1/2 w-5 h-5 rounded-full bg-white border-4 border-blue-500 group-hover:scale-125 transition-transform duration-300 hidden md:block z-10"></div>
-                      
+
                       {/* Empty side for Desktop alternating layout */}
                       <div className="hidden md:block w-5/12"></div>
-                      
+
                       {/* Content Container */}
                       <div className="w-full md:w-5/12 bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-gray-100 group-hover:shadow-lg group-hover:-translate-y-1 group-hover:border-blue-100 transition-all duration-300 relative z-10">
                         <h3 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-2">{exp.role}</h3>
@@ -267,7 +267,7 @@ const Experience = () => {
                         <ul className="space-y-3">
                           {exp.bullets.map((bullet, i) => (
                             <li key={i} className="flex items-start text-gray-700">
-                              <span className="h-1.5 w-1.5 rounded-full bg-purple-500 mt-2.5 mr-3 shrink-0"></span>
+                              <span className="h-1.5 w-1.5 rounded-full bg-[#2563eb] mt-2.5 mr-3 shrink-0"></span>
                               <span>{bullet}</span>
                             </li>
                           ))}
@@ -290,9 +290,9 @@ const Experience = () => {
                 className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto relative"
               >
                 {leadershipExp.map((exp) => (
-                  <motion.div key={exp.id} variants={itemVariants} className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 hover:border-purple-200 transition-all duration-300 flex flex-col items-start group">
-                    <div className="bg-purple-50 p-3 rounded-xl mb-5 group-hover:bg-purple-600 transition-colors duration-300">
-                      <exp.icon size={24} className="text-purple-600 group-hover:text-white transition-colors duration-300" />
+                  <motion.div key={exp.id} variants={itemVariants} className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 hover:border-[#2563eb]/30 transition-all duration-300 flex flex-col items-start group">
+                    <div className="bg-[#2563eb]/10 p-3 rounded-xl mb-5 group-hover:bg-[#2563eb] transition-colors duration-300">
+                      <exp.icon size={24} className="text-[#2563eb] group-hover:text-white transition-colors duration-300" />
                     </div>
                     <h3 className="text-xl font-extrabold text-gray-900 mb-2">{exp.role}</h3>
 
@@ -331,7 +331,7 @@ const Experience = () => {
                   <motion.div key={project.id} variants={itemVariants} className="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-2 hover:border-blue-100 transition-all duration-500 relative group overflow-hidden">
 
                     {/* Subtle BG Gradient Accent */}
-                    <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute top-0 left-0 w-full h-1.5 bg-[#2563eb] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
                     <div className="flex justify-between items-start mb-4">
                       <div className="bg-gray-50 px-3 py-1 rounded-full text-xs font-bold text-gray-500 mb-4 inline-block tracking-wider uppercase">

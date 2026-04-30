@@ -23,11 +23,10 @@ const About = () => {
   };
 
   return (
-    <section id="about" className="relative py-24 lg:py-32 bg-gray-50 overflow-hidden">
+    <section id="about" className="relative py-24 lg:py-32 bg-white overflow-hidden">
 
-      {/* Decorative Background Elements */}
-      <div className="absolute top-20 right-0 w-[400px] h-[400px] bg-blue-100 rounded-full mix-blend-multiply filter blur-[100px] opacity-40"></div>
-      <div className="absolute bottom-20 left-0 w-[400px] h-[400px] bg-purple-100 rounded-full mix-blend-multiply filter blur-[100px] opacity-40"></div>
+      {/* Background Decoration - Cleaned up to match Home.jsx */}
+      <div className="absolute top-0 right-0 w-1/3 h-full bg-blue-50/30 -skew-x-12 transform origin-top translate-x-20 pointer-events-none" />
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -35,128 +34,103 @@ const About = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.6 }}
-          className="mb-16 md:mb-24 text-center"
+          viewport={{ once: true }}
+          className="mb-16 text-center lg:text-left"
         >
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-black tracking-tight mb-4">About Me</h2>
-          <div className="h-1.5 w-24 bg-black mx-auto rounded-full"></div>
+          <h2 className="text-sm font-bold tracking-[0.3em] text-[#2563eb] uppercase mb-2">My Story</h2>
+          <div className="h-1 w-12 bg-[#2563eb] rounded-full hidden lg:block"></div>
         </motion.div>
 
-        {/* DOM Order: Image First (for mobile top), lg:flex-row-reverse for Desktop Image Right */}
-        <div className="flex flex-col lg:flex-row-reverse items-center lg:items-center gap-12 lg:gap-20">
+        <div className="flex flex-col lg:flex-row-reverse items-center lg:items-start gap-12 lg:gap-20">
 
-          {/* Image Container (Right on Desktop, Top on Mobile) */}
+          {/* Image Container */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
-            whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
-            viewport={{ once: true, margin: '-100px' }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="w-full lg:w-2/5 flex justify-center pb-6 lg:pb-0"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="w-full lg:w-2/5 flex justify-center"
           >
-            {/* Extremely reduced size, creative framing */}
-            <div className="relative w-56 h-56 sm:w-64 sm:h-64 lg:w-72 lg:h-72">
+            <div className="relative w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80">
+              {/* Solid offset accent */}
+              <div className="absolute inset-0 bg-[#2563eb]/10 rounded-3xl translate-x-4 translate-y-4"></div>
 
-              {/* Backglow accent */}
-              <div className="absolute inset-0 bg-blue-400 rounded-full blur-2xl opacity-20"></div>
-
-              {/* Subtle offset layer */}
-              <div className="absolute inset-0 bg-gray-200 rounded-full transform translate-x-4 lg:translate-x-6 translate-y-4 lg:translate-y-6"></div>
-
-              {/* Primary Image */}
+              {/* Primary Image with Square-to-Round Framing */}
               <img
                 src={profileImg}
                 alt="Ismail Yousif"
-                className="relative z-10 w-full h-full object-cover rounded-full shadow-2xl border-8 border-white transition-transform duration-700 hover:scale-105"
+                className="relative z-10 w-full h-full object-cover rounded-3xl shadow-2xl border-4 border-white"
               />
 
-              {/* Creative floating Quote Accent (visible on larger screens) */}
               <motion.div
                 animate={{ y: [-5, 5, -5] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -bottom-2 -left-2 sm:-bottom-4 sm:-left-4 bg-white p-3 sm:p-4 rounded-full shadow-xl border border-gray-100 z-20"
+                transition={{ duration: 4, repeat: Infinity }}
+                className="absolute -bottom-4 -right-4 bg-[#2563eb] p-4 rounded-2xl shadow-xl z-20"
               >
-                <Quote size={20} className="text-blue-500 fill-blue-500 opacity-80" />
+                <Quote size={24} className="text-white fill-white" />
               </motion.div>
             </div>
           </motion.div>
 
-          {/* Text Container (Left on Desktop, Bottom on Mobile) */}
+          {/* Text Container */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: '-100px' }}
-            className="w-full lg:w-3/5 flex flex-col justify-center text-center lg:text-left"
+            viewport={{ once: true }}
+            className="w-full lg:w-3/5 text-center lg:text-left"
           >
-            {/* Intro Text & Bold Heading */}
-            <motion.div variants={itemVariants} className="prose prose-lg text-gray-600 max-w-none mx-auto lg:mx-0">
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900 mb-6 leading-tight tracking-tight">
-                Turning Challenges into <br className="hidden lg:block" />
-                <span className="text-blue-600">
-                  Data-Driven Impact
-                </span>
+            <motion.div variants={itemVariants} className="prose prose-lg text-gray-600 max-w-none">
+              <h3 className="text-3xl sm:text-4xl font-black text-[#1a1a1b] mb-6 leading-tight">
+                Turning Challenges into <span className="text-[#2563eb]">Impact.</span>
               </h3>
-              <p className="text-base sm:text-lg lg:text-xl font-medium text-gray-800 leading-relaxed mb-4">
-                I am a Data Analyst and Computer Science graduate passionate about using data and Artificial Intelligence to solve real-world problems.
+              <p className="text-lg lg:text-xl font-semibold text-[#1a1a1b] mb-4">
+                I am a Data Scientist and Computer Science graduate focused on architecting intelligent systems that solve real-world problems.
               </p>
-              <p className="text-base sm:text-lg leading-relaxed mb-8">
-                My journey from Sudan, has fundamentally shaped my resilience and commitment to creating meaningful impact across everything I do.
+              <p className="text-base sm:text-lg leading-relaxed mb-8 text-gray-500">
+                My journey from Sudan has fundamentally shaped my resilience and commitment to creating meaningful progress through technology.
               </p>
             </motion.div>
 
-            {/* Read More Toggle Button */}
-            <motion.div variants={itemVariants} className="flex justify-center lg:justify-start mb-6 lg:mb-0">
+            <motion.div variants={itemVariants} className="flex justify-center lg:justify-start mb-6">
               <button
                 onClick={() => setIsExpanded(!isExpanded)}
-                className="group flex items-center gap-3 px-6 py-3 bg-white border border-gray-200 rounded-full text-sm font-bold text-black shadow-sm hover:border-gray-300 hover:shadow-md hover:-translate-y-0.5 transition-all focus:outline-none"
+                className="group flex items-center gap-3 px-8 py-3.5 bg-[#1a1a1b] rounded-full text-sm font-bold text-white shadow-lg hover:bg-black transition-all"
               >
-                {isExpanded ? 'Hide Story' : 'Read Full Story'}
-                <span className="bg-gray-50 p-1.5 rounded-full group-hover:bg-gray-100 transition-colors">
-                  {isExpanded ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
-                </span>
+                {isExpanded ? 'Hide Story' : 'Read My Journey'}
+                {isExpanded ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
               </button>
             </motion.div>
 
-            {/* Expandable Story Section */}
             <AnimatePresence>
               {isExpanded && (
                 <motion.div
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: 'auto' }}
-                  exit={{ opacity: 0, height: 0 }}
-                  transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                  className="overflow-hidden lg:mt-8"
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  className="lg:mt-8"
                 >
-                  <div className="prose prose-base text-gray-600 max-w-none pt-4 pb-2 space-y-6 text-left">
-                    <p>
-                      My early life in Al Genaina wasn't easy journey, I faced overwhelming physical and socio-economic challenges, but education miraculously outshined them and became my ultimate beacon of hope.
+                  <div className="text-left space-y-6 border-l-4 border-gray-100 pl-6 py-2">
+                    <p className="text-gray-600 leading-relaxed">
+                      My early life in Al Genaina was a journey defined by perseverance. I faced significant socio-economic challenges, but education became my ultimate beacon of hope.
                     </p>
 
-                    {/* Styled Quote Box instead of regular blockquote */}
-                    <div className="relative p-6 my-6 rounded-2xl bg-white border border-gray-100 shadow-sm overflow-hidden group hover:shadow-md transition-shadow">
-                      <Quote className="absolute -top-2 -left-2 text-gray-50 w-24 h-24 transform -rotate-12 group-hover:scale-110 transition-transform duration-500" />
-                      <p className="relative z-10 text-lg sm:text-xl font-semibold italic text-gray-800 text-center leading-relaxed">
-                        "You will study no matter what, even if we have to sacrifice"
+                    <div className="relative p-8 rounded-3xl bg-gray-50 border border-gray-100">
+                      <p className="text-lg font-bold italic text-[#1a1a1b] leading-relaxed">
+                        "You will study no matter what, even if we have to sacrifice."
                       </p>
-                      <p className="relative z-10 text-xs font-bold text-gray-400 mt-4 text-center uppercase tracking-[0.2em]">
+                      <p className="text-xs font-black text-[#2563eb] mt-4 uppercase tracking-widest">
                         — My Grandmother
                       </p>
                     </div>
 
-                    <p>
-                      Her unyielding support fueled my ambition. This drive ultimately led to a fully funded scholarship journey to Malaysia,
-                      broadening my worldviews drastically and giving me an incredible opportunity to dive deeply into technology alongside different cultures across the world.
-                    </p>
-                    <p>
-                      Today, my focus is relentlessly locked on Data Science and Artificial Intelligence. I am determined to leverage cutting-edge analytical tools
-                      to inform decisions, uncover insights, and architect a brighter, universally-equitable data-driven future.
+                    <p className="text-gray-600 leading-relaxed">
+                      Her support led me to a fully funded scholarship in Malaysia, where I’ve spent the last few years diving deep into AI and Data Engineering.
+                      Today, I am determined to leverage cutting-edge analytical tools to architect a brighter, more equitable future.
                     </p>
                   </div>
                 </motion.div>
               )}
             </AnimatePresence>
-
           </motion.div>
         </div>
       </div>

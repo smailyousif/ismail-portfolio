@@ -1,17 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import cvPdf from '../assets/Ismail_Ramadan_DA_CV.pdf';
-import { ArrowRight, Download, MessageCircle } from 'lucide-react';
+import { ArrowRight, Download } from 'lucide-react';
 
 const Home = () => {
+  // Animation Variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.1,
-      }
+      transition: { staggerChildren: 0.2, delayChildren: 0.1 }
     }
   };
 
@@ -24,14 +22,6 @@ const Home = () => {
     }
   };
 
-  const buttonContainerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.15, delayChildren: 0.7 }
-    }
-  };
-
   const buttonVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -41,9 +31,18 @@ const Home = () => {
     }
   };
 
-  const scrollToSection = (e, id) => {
+  // Tracking and Scroll Logic
+  const handleViewWork = (e) => {
     e.preventDefault();
-    const element = document.getElementById(id);
+    // Google Analytics Event Tracking
+    if (window.gtag) {
+      window.gtag('event', 'view_work_click', {
+        'event_category': 'Engagement',
+        'event_label': 'Home Hero Button'
+      });
+    }
+
+    const element = document.getElementById('experience');
     if (element) {
       window.scrollTo({
         top: element.offsetTop - 80,
@@ -55,79 +54,72 @@ const Home = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center bg-white overflow-hidden px-4 sm:px-6 lg:px-8">
 
-      {/* Subtle Animated Background Gradient */}
-      <div className="absolute inset-0 z-0 pointer-events-none flex items-center justify-center overflow-hidden">
+      {/* Refined Background - Modern Geometric */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden flex items-center justify-center">
         <motion.div
-          className="absolute w-[500px] h-[500px] sm:w-[800px] sm:h-[800px] bg-gradient-to-tr from-gray-50 to-transparent rounded-full blur-[100px] opacity-70"
-          animate={{
-            y: [-30, 30, -30],
-            x: [20, -20, 20],
-            scale: [1, 1.05, 1],
-          }}
-          transition={{
-            duration: 15,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
+          className="absolute w-[600px] h-[600px] border-[1px] border-[#2563eb]/20 rounded-full"
+          animate={{ scale: [1, 1.05, 1] }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute w-[800px] h-[800px] border-[1px] border-gray-200 rounded-full"
+          animate={{ scale: [1.02, 1, 1.02] }}
+          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
         />
       </div>
 
-      <div className="relative z-10 max-w-5xl mx-auto w-full text-center pt-24 pb-12 mt-8 lg:mt-0">
+      <div className="relative z-10 max-w-5xl mx-auto w-full text-center pt-20">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
           className="flex flex-col items-center"
         >
-          <motion.h2 variants={itemVariants} className="text-xs sm:text-sm md:text-base font-semibold tracking-[0.2em] text-gray-400 uppercase mb-6">
-            Welcome
+          <motion.h2 variants={itemVariants} className="text-sm font-bold tracking-[0.3em] text-[#2563eb] uppercase mb-6">
+            Available for New Opportunities
           </motion.h2>
 
-          <motion.h1 variants={itemVariants} className="text-5xl sm:text-7xl md:text-[5.5rem] font-black text-black tracking-tighter mb-8 leading-[1.05] sm:leading-[1.05]">
+          <motion.h1 variants={itemVariants} className="text-6xl sm:text-7xl md:text-[6.5rem] font-black text-[#1a1a1b] tracking-tighter mb-6 leading-[1]">
             Ismail Yousif
           </motion.h1>
 
-          <motion.div variants={itemVariants} className="w-24 h-1.5 bg-black rounded-full mb-10"></motion.div>
-
-          <motion.h3 variants={itemVariants} className="text-xl sm:text-2xl md:text-3xl font-medium text-gray-800 mb-8 w-full flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-0">
+          <motion.h3 variants={itemVariants} className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-600 mb-8 flex flex-wrap justify-center items-center gap-3">
             <span>Data Analyst</span>
-            <span className="hidden sm:inline mx-4 text-gray-300">|</span>
-            <span>Machine Learning Enthusiast</span>
+            <span className="text-blue-200 hidden sm:inline">/</span>
+            <span>AI Engineer</span>
           </motion.h3>
 
-          <motion.p variants={itemVariants} className="text-base sm:text-lg md:text-xl text-gray-400 max-w-2xl text-center leading-relaxed mb-14 px-4 sm:px-0 font-medium">
-            Passionate about turning  data into actionable insights to drive busines  decisions.
+          <motion.p variants={itemVariants} className="text-lg md:text-xl text-gray-500 max-w-2xl mb-12 font-medium leading-relaxed">
+            I build intelligent systems that turn complex data into actionable
+            forward-looking insights.
           </motion.p>
 
           <motion.div
-            variants={buttonContainerVariants}
-            initial="hidden"
-            animate="visible"
-            className="flex flex-col sm:flex-row items-center justify-center gap-5 sm:gap-6 w-full sm:w-auto px-4 sm:px-0"
+            variants={itemVariants}
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto"
           >
-            {/* Primary Button */}
+            {/* Primary Action: View Work */}
             <motion.a
               variants={buttonVariants}
               href="#experience"
-              onClick={(e) => scrollToSection(e, 'experience')}
-              className="group flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-3.5 bg-black text-white rounded-full font-semibold transition-all duration-300 hover:bg-gray-800 hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black"
+              onClick={handleViewWork}
+              className="group flex items-center justify-center gap-2 w-full sm:w-auto px-10 py-4 bg-[#1a1a1b] text-white rounded-full font-bold transition-all duration-300 hover:bg-black hover:scale-105 hover:shadow-2xl shadow-blue-900/20"
             >
               View Work
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </motion.a>
 
-            {/* Outline Button */}
+            {/* Secondary Action: Resume */}
             <motion.a
               variants={buttonVariants}
               href={cvPdf}
-              download="Ismail_Ramadan_DA_CV.pdf"
-              className="group flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-3.5 bg-white text-black border-2 border-gray-200 rounded-full font-semibold transition-all duration-300 hover:border-black hover:bg-gray-50 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center justify-center gap-2 w-full sm:w-auto px-10 py-4 bg-white text-[#1a1a1b] border-2 border-gray-100 rounded-full font-bold transition-all duration-300 hover:border-[#2563eb] hover:text-[#2563eb] hover:scale-105"
             >
-              Download CV
-              <Download size={18} className="text-gray-500 group-hover:text-black transition-colors" />
+              Resume / CV
+              <Download size={18} className="group-hover:translate-y-0.5 transition-transform" />
             </motion.a>
-
-
           </motion.div>
 
         </motion.div>

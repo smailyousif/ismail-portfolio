@@ -35,7 +35,7 @@ const Skills = () => {
           <p className="text-lg text-gray-500 mb-8 max-w-2xl mx-auto">
             Technologies, tools, and methodologies I use to turn data into impact
           </p>
-          <div className="h-1.5 w-24 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
+          <div className="h-1.5 w-24 bg-[#2563eb] mx-auto rounded-full"></div>
         </motion.div>
 
         {/* Marquee Container */}

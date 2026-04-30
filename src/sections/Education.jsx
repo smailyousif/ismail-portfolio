@@ -1,18 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { GraduationCap, MapPin, BookOpen, Users, CheckCircle, Award } from 'lucide-react';
+import { MapPin, BookOpen, Users, CheckCircle, Award, Star } from 'lucide-react';
 
 const Education = () => {
   const highlights = [
-    { text: "Final Year Project (FYP)", icon: CheckCircle },
-    { text: "Fully funded scholarship", icon: Award },
-    { text: "Focus on AI & Machine Learning", icon: BookOpen },
-    { text: "Global collaboration (50+ nationalities)", icon: Users },
+    { text: "Final Year Project: Student Performance Prediction", icon: CheckCircle },
+    { text: "Albukhary Foundation Full Scholarship", icon: Award },
+    { text: "Specialization in Data Science & AI", icon: BookOpen },
+    { text: "Global Collaboration (50+ Nationalities)", icon: Users },
   ];
 
-  const coreValues = ["Adab", "Akhlaq", "Aqidah", "Amanah", "Amalan"];
-
-  // Framer motion variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -33,84 +30,81 @@ const Education = () => {
     <section id="education" className="py-24 lg:py-32 bg-white overflow-hidden">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* Section Header */}
+        {/* Section Header - Matching the new Brand Style */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-20"
+          viewport={{ once: true }}
+          className="mb-20 text-center lg:text-left"
         >
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-black tracking-tight mb-4">Education</h2>
-          <div className="h-1.5 w-20 bg-black mx-auto rounded-full"></div>
+          <h2 className="text-sm font-bold tracking-[0.3em] text-[#2563eb] uppercase mb-2">Academic Foundation</h2>
+          <div className="h-1 w-12 bg-[#2563eb] rounded-full hidden lg:block"></div>
         </motion.div>
 
-        {/* Timeline Layout Container */}
-        <div className="relative pl-6 sm:pl-10">
+        {/* Timeline Layout */}
+        <div className="relative pl-8 sm:pl-12">
 
-          {/* Vertical Gradient Timeline Line */}
+          {/* Solid Professional Timeline Line (No Gradients) */}
           <motion.div
             initial={{ height: 0 }}
             whileInView={{ height: '100%' }}
-            viewport={{ once: true, margin: '-100px' }}
-            transition={{ duration: 1.5, ease: "easeInOut" }}
-            className="absolute left-0 top-2 bottom-0 w-1 bg-gradient-to-b from-blue-500 to-blue-200 rounded-full"
+            viewport={{ once: true }}
+            transition={{ duration: 1.2 }}
+            className="absolute left-0 top-2 bottom-0 w-[2px] bg-gray-100"
           ></motion.div>
 
-          {/* Timeline Dot */}
-          <motion.div
-            initial={{ scale: 0, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            viewport={{ once: true, margin: '-100px' }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="absolute left-[-10px] top-6 w-6 h-6 rounded-full bg-white border-4 border-blue-500 shadow-sm"
-          ></motion.div>
+          {/* Solid Royal Blue Dot */}
+          <div className="absolute left-[-5px] top-2 w-3 h-3 rounded-full bg-[#2563eb] shadow-[0_0_15px_rgba(37,99,235,0.4)]"></div>
 
-          {/* Right Content Blocks Container */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: '-50px' }}
-            className="flex flex-col gap-10 sm:gap-12 pt-4"
+            viewport={{ once: true }}
+            className="flex flex-col gap-10"
           >
 
-            {/* Primary Info (Block 1) */}
+            {/* University & Degree */}
             <motion.div variants={itemVariants}>
-              <h3 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-4 leading-tight tracking-tighter flex flex-col gap-4">
-                <span>Bachelor of Computer Science</span>
-                <span className="text-xl sm:text-2xl text-blue-600 font-bold block tracking-normal">
-                  (Data Science Specialization)
+              <div className="flex flex-wrap items-center gap-3 mb-4">
+                <span className="px-3 py-1 bg-blue-50 text-[#2563eb] text-xs font-bold rounded-full uppercase tracking-wider">
+                  2021 — 2025
                 </span>
+                <span className="px-3 py-1 bg-gray-100 text-gray-600 text-xs font-bold rounded-full uppercase tracking-wider flex items-center gap-1">
+                  <Star size={12} className="fill-gray-600" /> CGPA: 3.45
+                </span>
+              </div>
+
+              <h3 className="text-3xl sm:text-4xl font-black text-[#1a1a1b] leading-tight tracking-tight">
+                Bachelor of Computer Science <br />
+                <span className="text-[#2563eb] text-2xl sm:text-3xl">(Honours)</span>
               </h3>
-              <div className="flex items-center text-gray-600 font-semibold text-base sm:text-lg">
-                <MapPin size={20} className="mr-2 text-gray-400" />
-                Albukhary International University
+
+              <div className="flex items-center mt-4 text-gray-500 font-semibold">
+                <MapPin size={18} className="mr-2 text-[#2563eb]" />
+                Albukhary International University, Malaysia
               </div>
             </motion.div>
 
-            {/* Description (Block 2) */}
-            <motion.div variants={itemVariants}>
-              <div className="text-gray-600 leading-relaxed space-y-5 text-lg">
-                <p>
-                  During my studies at <span className="font-semibold text-gray-800">Albukhary International University</span>, I built a strong foundation in computer science while advancing my skills in data analysis, machine learning, and artificial intelligence.
-                </p>
-                <p>
-                  I collaborated with students from over 50+ countries, gaining valuable experience working seamlessly across diverse cultures and developing unique perspectives for solving complex problems.
-                </p>
-              </div>
+            {/* Context */}
+            <motion.div variants={itemVariants} className="max-w-2xl">
+              <p className="text-gray-600 leading-relaxed text-lg italic border-l-4 border-gray-50 pl-6">
+                Graduated with <span className="text-[#1a1a1b] font-bold">Second Class Upper</span> division.
+                My education was defined by a cross-cultural environment, allowing me to approach
+                AI and Data problems with a unique global perspective.
+              </p>
             </motion.div>
 
-            {/* Highlights Grid (Block 3) */}
+            {/* Highlights Grid - Unified Accent Colors */}
             <motion.div variants={itemVariants}>
-              <h4 className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-6">Experience Highlights</h4>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+              <h4 className="text-xs font-black text-gray-400 uppercase tracking-widest mb-6">Key Achievements</h4>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {highlights.map((highlight, idx) => (
-                  <div key={idx} className="flex items-start gap-4 p-4 rounded-xl bg-gray-50/50 hover:bg-white border border-gray-100 hover:border-blue-100 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 group">
-                    <div className="bg-white group-hover:bg-blue-600 p-2.5 rounded-lg text-gray-400 group-hover:text-white shadow-sm transition-all duration-300">
-                      <highlight.icon size={20} className="stroke-[2.2px]" />
+                  <div key={idx} className="flex items-center gap-4 p-5 rounded-2xl bg-white border border-gray-100 hover:border-[#2563eb]/20 hover:shadow-xl hover:shadow-blue-900/5 transition-all duration-300 group">
+                    <div className="bg-gray-50 group-hover:bg-[#2563eb] p-3 rounded-xl text-[#2563eb] group-hover:text-white transition-all">
+                      <highlight.icon size={20} />
                     </div>
-                    <p className="text-sm font-semibold text-gray-800 leading-snug mt-1.5">
+                    <p className="text-sm font-bold text-[#1a1a1b]">
                       {highlight.text}
                     </p>
                   </div>
@@ -118,11 +112,8 @@ const Education = () => {
               </div>
             </motion.div>
 
-
-
           </motion.div>
         </div>
-
       </div>
     </section>
   );

@@ -20,7 +20,6 @@ const Navbar = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
 
-      // Determine active section based on scroll position
       const sections = navLinks.map(link => link.href.substring(1));
       let currentSection = sections[0];
 
@@ -28,7 +27,8 @@ const Navbar = () => {
         const element = document.getElementById(section);
         if (element) {
           const rect = element.getBoundingClientRect();
-          if (rect.top <= 120 && rect.bottom >= 120) {
+          // Adjust threshold for detection
+          if (rect.top <= 150 && rect.bottom >= 150) {
             currentSection = section;
           }
         }
@@ -49,7 +49,7 @@ const Navbar = () => {
 
     if (element) {
       window.scrollTo({
-        top: element.offsetTop - 100, // Offset for navbar height + spacing
+        top: element.offsetTop - 100,
         behavior: 'smooth',
       });
     }
@@ -59,9 +59,9 @@ const Navbar = () => {
   return (
     <div className="fixed top-0 left-0 w-full z-50 flex justify-center mt-4 sm:mt-6 px-4 pointer-events-none">
       <nav
-        className={`pointer-events-auto flex flex-col justify-center w-full max-w-[1100px] rounded-[36px] transition-all duration-300 border border-transparent overflow-hidden ${isScrolled
-          ? 'bg-[#e2e4df]/95 backdrop-blur-md shadow-lg py-2.5 px-4 sm:px-6 border-white/40'
-          : 'bg-[#e2e4df] py-3.5 px-4 sm:px-6 shadow-sm'
+        className={`pointer-events-auto flex flex-col justify-center w-full max-w-[1100px] rounded-[36px] transition-all duration-300 border overflow-hidden ${isScrolled
+          ? 'bg-white/80 backdrop-blur-md shadow-xl py-2 px-4 sm:px-6 border-white/40'
+          : 'bg-white py-3.5 px-4 sm:px-6 shadow-sm border-gray-100'
           }`}
       >
         <div className="flex justify-between items-center w-full bg-transparent">
@@ -71,7 +71,11 @@ const Navbar = () => {
             onClick={(e) => handleLinkClick(e, '#home')}
             className="flex-shrink-0 flex items-center pr-2"
           >
-            <img src={ismailIcon} alt="Ismail Yousif Logo" className="h-9 sm:h-11 w-auto object-contain rounded-full shadow-sm" />
+            <img
+              src={ismailIcon}
+              alt="Ismail Yousif Logo"
+              className="h-9 sm:h-11 w-auto object-contain rounded-full shadow-sm hover:scale-105 transition-transform"
+            />
           </a>
 
           {/* Desktop Nav */}
@@ -81,9 +85,9 @@ const Navbar = () => {
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleLinkClick(e, link.href)}
-                className={`text-[15px] tracking-wide transition-all duration-300 hover:text-black ${activeSection === link.href.substring(1)
-                  ? 'text-black font-extrabold'
-                  : 'text-gray-600 font-semibold'
+                className={`text-[14px] tracking-tight transition-all duration-300 hover:text-[#2563eb] ${activeSection === link.href.substring(1)
+                  ? 'text-[#2563eb] font-bold'
+                  : 'text-gray-500 font-semibold'
                   }`}
               >
                 {link.name}
@@ -97,17 +101,17 @@ const Navbar = () => {
               href="https://wa.me/+601157688084"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden md:inline-flex items-center justify-center px-7 py-3 md:py-2.5 text-[15px] font-bold text-black bg-gradient-to-r from-blue-400 to-purple-400 rounded-full hover:scale-[1.02] transition-all duration-300 focus:outline-none shadow-md"
+              className="hidden md:inline-flex items-center justify-center px-8 py-2.5 text-[14px] font-bold text-white bg-[#2563eb] rounded-full hover:bg-blue-700 hover:shadow-lg hover:scale-105 transition-all duration-300 focus:outline-none"
             >
               Contact Me
             </a>
 
             <button
-              className="md:hidden p-2 bg-black/5 text-gray-700 hover:text-black hover:bg-black/10 transition-colors focus:outline-none rounded-full"
+              className="md:hidden p-2 bg-gray-100 text-gray-700 hover:text-black transition-colors focus:outline-none rounded-full"
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Toggle navigation menu"
             >
-              {isOpen ? <X size={22} /> : <Menu size={22} />}
+              {isOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
           </div>
         </div>
@@ -122,15 +126,15 @@ const Navbar = () => {
               transition={{ duration: 0.3 }}
               className="md:hidden w-full"
             >
-              <div className="flex flex-col pt-4 pb-2 w-full gap-1 border-t border-gray-300/30 mt-3">
+              <div className="flex flex-col pt-4 pb-2 w-full gap-1 border-t border-gray-100 mt-3">
                 {navLinks.map((link) => (
                   <a
                     key={link.name}
                     href={link.href}
                     onClick={(e) => handleLinkClick(e, link.href)}
                     className={`block px-4 py-3 rounded-2xl text-center text-[15px] transition-colors ${activeSection === link.href.substring(1)
-                      ? 'bg-[#243e36] text-white font-bold shadow-md'
-                      : 'text-gray-700 font-semibold hover:bg-black/5'
+                      ? 'bg-blue-50 text-[#2563eb] font-bold'
+                      : 'text-gray-700 font-semibold hover:bg-gray-50'
                       }`}
                   >
                     {link.name}
@@ -141,7 +145,7 @@ const Navbar = () => {
                     href="https://wa.me/+601157688084"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full inline-flex items-center justify-center px-4 py-3.5 text-base font-bold text-black bg-gradient-to-r from-blue-400 to-purple-400 rounded-2xl shadow-md transition-colors"
+                    className="w-full inline-flex items-center justify-center px-4 py-3.5 text-base font-bold text-white bg-[#2563eb] rounded-2xl shadow-md transition-colors hover:bg-blue-700"
                   >
                     Contact Me
                   </a>
